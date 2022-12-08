@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
+    <title>productMangement</title>
+  </head>
+  <body >
+   
+    <div class="container" id="container">
+      <div class="head">
+        <h1>product mangement system</h1>
+        <p>create , delete ,update, read , search</p>
+      </div>
+      <div class="input">
+        <input type="text" id="title" placeholder="title" />
+        <div class="price-info">
+          <input
+            onkeyup="getTotal()"
+            type="text"
+            id="price"
+            placeholder="price"
+          />
+          <input onkeyup="getTotal()" type="text" id="tax" placeholder="tax" />
+          <input onkeyup="getTotal()" type="text" id="add" placeholder="add" />
+          <input
+            onkeyup="getTotal()"
+            type="text"
+            id="discount"
+            placeholder="discount"
+          />
+          <span class="total" id="total"></span>
+        </div>
+        <input type="text" id="count" placeholder="count" />
+        <input type="text" id="category" placeholder="category" />
+        <button class="create" id="create" onclick="createNew()">create</button>
+      </div>
+      <div class="result">
+        <div class="search">
+          <input
+            type="text"
+            id="search"
+            placeholder="search"
+            onkeyup="searchProduct(this.value.toLowerCase())"
+          />
+          <div class="btn">
+            <button
+              class="by-title bt"
+              id="byTitle"
+              onclick="getSearchMode(this.id)"
+            >
+              search by title
+            </button>
+            <button
+              class="by-category bt"
+              id="byCategory"
+              onclick="getSearchMode(this.id)"
+            >
+              search by category
+            </button>
+          </div>
+        </div>
+        <div class="delete-all" id="delete-all" onclick="deleteAll()">
+          delete all
+        </div>
+        <div class="show">
+          <table>
+            <thead>
+              <tr>
+                <th>id</th>
+                <th>title</th>
+                <th>price</th>
+                <th>tax</th>
+                <th>add</th>
+                <th>discount</th>
+                <th>total</th>
+                <!-- <th>count</th> -->
+                <th>category</th>
+                <th>update</th>
+                <th>delete</th>
+              </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
